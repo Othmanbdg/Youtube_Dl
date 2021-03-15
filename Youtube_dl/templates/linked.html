@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Downloaded videos {% endblock %}
+
+{% block content %}
+{% for key, value in links.items() %}
+	<a href=static/{{value}} download>{{key}}</a>
+	<br>
+	<br>
+	{%endfor%}
+{% endblock %}

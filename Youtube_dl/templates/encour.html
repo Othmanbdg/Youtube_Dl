@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Choose your format {% endblock %}
+
+{% block content %}
+<form action="#" method="post">
+	{% for key, value in streams.items() %}
+		{% if 'mp3' == key %}
+		<div>
+			<input type="checkbox"  name=hey value = {{key}}>
+			<label> Mp3</label>
+		</div>
+		{% elif key != "img" %}
+			<div>
+				<input type="checkbox"  name=hey value = {{key}}>
+				<label> {{value.resolution}}, {{value.fps}} fps</label>
+			<div>
+		{% endif %}
+	{% endfor %}
+	<p><input class="btn btn-success" type="submit" value="Télécharger"/></p>
+</form>
+
+	<p> {{streams[0].title}} 
+		<img src={{streams["img"]}} style="width: 25%;height: auto;float:right;"/>
+	</p>
+
+{% endblock %}
+
